@@ -26,18 +26,18 @@ public class CheckGuest {
         // }
         // }
 
-        boolean find = false;
+        boolean isFound = false;
         int i = 0;
 
-        while (!find && i < guests.length) {
+        while (!isFound && i < guests.length) {
 
             if (guests[i].equalsIgnoreCase(guestName)) {
                 System.out.println("Sei in lista! Benvenuto alla festa!");
-                find = true;
+                isFound = true;
             }
             i++;
         }
-        if (!find)
+        if (!isFound)
             System.out.println("Il tuo nome non è presente nella lista!");
     }
 }
