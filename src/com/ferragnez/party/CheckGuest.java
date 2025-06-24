@@ -16,13 +16,28 @@ public class CheckGuest {
         // pulizia nome
         guestName = guestName.trim().replaceAll("\\s+", " ");
 
-        for (int i = 0; i < guests.length; i++) {
+        // for (int i = 0; i < guests.length; i++) {
+        // if (guests[i].equalsIgnoreCase(guestName)) {
+        // System.out.println("Sei in lista! Benvenuto alla festa!");
+        // break;
+        // } else if (i == guests.length - 1 && !guests[i].equalsIgnoreCase(guestName))
+        // {
+        // System.out.println("Il tuo nome non è presente nella lista!");
+        // }
+        // }
+
+        boolean find = false;
+        int i = 0;
+
+        while (!find && i < guests.length) {
+
             if (guests[i].equalsIgnoreCase(guestName)) {
                 System.out.println("Sei in lista! Benvenuto alla festa!");
-                break;
-            } else if (i == guests.length - 1 && !guests[i].equalsIgnoreCase(guestName)) {
-                System.out.println("Il tuo nome non è presente nella lista!");
+                find = true;
             }
+            i++;
         }
+        if (!find)
+            System.out.println("Il tuo nome non è presente nella lista!");
     }
 }
